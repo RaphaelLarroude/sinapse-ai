@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sinapse AI — O hub definitivo de Inteligências Artificiais</title>
+<meta name="description" content="Sinapse AI reúne as principais ferramentas de IA em um só lugar, com Synapse Code e Synapse Work, por R$ 30/mês durante o lançamento.">
+<style>
+:root{--bg:#05060f;--panel:rgba(10,14,30,.72);--neon:#00f0ff;--neon2:#ff2bd6;--neon3:#7c4dff;--text:#e8f4ff;--muted:#93a7c4;--border:rgba(0,240,255,.22)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(700px 420px at 12% 8%,rgba(0,240,255,.16),transparent 60%),radial-gradient(700px 500px at 88% 18%,rgba(255,43,214,.14),transparent 60%),radial-gradient(900px 600px at 50% 100%,rgba(124,77,255,.16),transparent 65%),linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:auto,auto,auto,44px 44px,44px 44px}
+.wrap{max-width:1160px;margin:auto;padding:0 22px}
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(5,6,15,.72);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:15px 0}
+.logo{display:flex;align-items:center;gap:11px;font-weight:800;color:var(--text);text-decoration:none}
+.logo-mark{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,var(--neon),var(--neon2));color:#02030a;font-weight:900;box-shadow:0 0 22px rgba(0,240,255,.45)}
+.logo span{background:linear-gradient(90deg,var(--neon),var(--neon2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.menu{display:flex;gap:22px}.menu a{color:var(--muted);text-decoration:none;font-size:14px}.menu a:hover{color:var(--neon)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;text-decoration:none;font-weight:800;border-radius:999px;padding:13px 22px;font-size:14px;transition:.2s}
+.btn-primary{color:#02030a;background:linear-gradient(90deg,var(--neon),var(--neon2));box-shadow:0 0 24px rgba(0,240,255,.32)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 34px rgba(255,43,214,.42)}
+.btn-ghost{color:var(--neon);background:transparent;border:1px solid var(--border)}
+.btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.hero{padding:96px 0 72px;text-align:center}
+.tag{display:inline-flex;padding:8px 15px;border-radius:999px;border:1px solid var(--border);background:rgba(0,240,255,.07);color:var(--neon);font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase}
+h1{font-size:clamp(38px,7vw,74px);line-height:1.02;margin:22px 0 18px;font-weight:900;letter-spacing:-2px}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--neon),var(--neon2),var(--neon3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:740px;margin:0 auto;color:var(--muted);font-size:18px}
+.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:32px 0 16px}
+.price-note{color:var(--muted);font-size:13px}
+section{padding:78px 0}.section-head{text-align:center;max-width:780px;margin:0 auto 44px}
+h2{font-size:clamp(28px,4vw,44px);letter-spacing:-1px;margin-bottom:12px}.section-head p{color:var(--muted)}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:22px;padding:28px;backdrop-filter:blur(12px);transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,43,214,.45)}
+.grid{display:grid;gap:20px}.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}
+.icon{width:50px;height:50px;border-radius:15px;display:grid;place-items:center;font-size:23px;background:rgba(0,240,255,.1);border:1px solid var(--border);margin-bottom:16px}
+.card h3{font-size:20px;margin-bottom:8px}.card p{color:var(--muted);font-size:15px}
+.product{border-color:rgba(255,43,214,.25);background:linear-gradient(160deg,rgba(0,240,255,.08),rgba(255,43,214,.08))}
+.pill{display:inline-block;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:rgba(255,43,214,.14);color:#ff9de4;font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}
+.terminal{margin-top:18px;padding:16px;border-radius:14px;background:#02040c;border:1px solid rgba(0,240,255,.25);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:#8ff6ff}
+.terminal b{color:#ff6ad5}
+.ai-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.ai{display:flex;gap:13px;align-items:center;padding:16px;border-radius:16px;border:1px solid var(--border);background:rgba(8,12,25,.7)}
+.ai-logo{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-weight:900;background:linear-gradient(135deg,rgba(0,240,255,.2),rgba(255,43,214,.2));border:1px solid var(--border)}
+.ai b{display:block;font-size:15px}.ai small{color:var(--muted);font-size:12px}
+.calc{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
+.field{margin-bottom:16px}label{display:block;font-size:13px;color:var(--muted);margin-bottom:7px;font-weight:700}
+input,select{width:100%;padding:13px 15px;border-radius:12px;border:1px solid var(--border);background:rgba(3,6,16,.85);color:var(--text);font:inherit}
+input:focus,select:focus{outline:none;border-color:var(--neon)}
+.result{font-size:44px;font-weight:900;color:var(--neon);text-shadow:0 0 22px rgba(0,240,255,.35)}
+.result-sub{color:var(--muted);font-size:14px;margin-top:6px}
+.saving{margin-top:18px;padding:14px;border-radius:14px;background:rgba(0,255,170,.08);border:1px solid rgba(0,255,170,.25);color:#7dffd0;font-weight:800}
+.counter-card{text-align:center;background:linear-gradient(160deg,rgba(0,240,255,.09),rgba(124,77,255,.09))}
+.big-count{font-size:clamp(48px,9vw,86px);font-weight:900;color:var(--neon);text-shadow:0 0 28px rgba(0,240,255,.4)}
+.goal{margin-top:18px}.bar{height:10px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}.bar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--neon),var(--neon2));width:0;transition:width .6s}
+.goal-row{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:7px}
+.goals{margin-top:26px;display:grid;gap:10px;text-align:left}
+.goal-item{display:flex;gap:10px;align-items:center;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:rgba(4,8,18,.75);font-size:14px}
+.goal-item.done{border-color:rgba(0,255,170,.4);color:#a8ffe2}.status{margin-left:auto;font-weight:900}
+.ads-options{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.ads-option{padding:18px;border-radius:16px;border:1px solid var(--border);background:rgba(4,8,18,.75);cursor:pointer;text-align:center;transition:.2s}
+.ads-option:hover,.ads-option.selected{border-color:var(--neon);box-shadow:0 0 20px rgba(0,240,255,.18)}
+.ads-option b{display:block;font-size:24px;color:var(--neon)}.ads-option small{color:var(--muted)}
+.vote-count{margin-top:8px;font-size:12px;color:var(--muted)}
+.note{margin-top:22px;padding:18px;border-radius:16px;border:1px solid rgba(255,43,214,.3);background:rgba(255,43,214,.07);color:#ffd6f4;font-size:14px}
+footer{border-top:1px solid var(--border);padding:34px 0;color:var(--muted);font-size:13px;text-align:center}
+@media(max-width:900px){.g2,.g3,.calc,.ads-options{grid-template-columns:1fr}.menu{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="logo" href="#"><span class="logo-mark">S</span>Sinapse<span>AI</span></a>
+<nav class="menu"><a href="#produtos">Produtos</a><a href="#ias">IAs inclusas</a><a href="#economia">Economia</a><a href="#comunidade">Comunidade</a></nav>
+<a class="btn btn-primary" href="#comunidade">Quero apoiar</a>
+</div></header>
+
+<main>
+<section class="hero wrap"><span class="tag">Lançamento limitado</span>
+<h1>Todas as principais IAs.<br><em>Um só hub.</em></h1>
+<p>A <b>Sinapse AI</b> é um hub que reúne as principais inteligências artificiais em uma única plataforma — para criar, programar, estudar, produzir conteúdo e trabalhar com mais velocidade.</p>
+<div class="hero-actions"><a class="btn btn-primary" href="#comunidade">Quero a Sinapse AI</a><a class="btn btn-ghost" href="#economia">Calcular minha economia</a></div>
+<p class="price-note">Durante o lançamento: <b>R$ 30/mês</b>. Promoção temporária, sujeita ao apoio da comunidade.</p>
+</section>
+
+<section id="produtos" class="wrap"><div class="section-head"><h2>Conheça o ecossistema Sinapse</h2><p>A Sinapse AI terá uma experiência própria, com foco em ser realmente útil no dia a dia de quem estuda, cria, programa e trabalha.</p></div>
+<div class="grid g2">
+<div class="card product"><span class="pill">Synapse Code</span><div class="icon">⌨️</div><h3>Programação com interface de terminal</h3>
+<p>O <b>Synapse Code</b> é uma interface de terminal para programar, criar sites, aplicativos, scripts, automações e corrigir projetos. Ele terá uma usabilidade inspirada em ferramentas como <b>Codex</b>, <b>Claude Code</b>, <b>OpenCode</b> e <b>Hermes</b> — mas com identidade, recursos e funcionamento próprios da Sinapse AI.</p>
+<div class="terminal">$ sinapse code<br><b>></b> “Crie um site responsivo para minha loja”<br><b>></b> Analisando projeto…<br><b>></b> Gerando arquivos, componentes e estilos…<br><b>></b> Projeto pronto para revisão.</div>
+<p style="margin-top:14px">Estará disponível como <b>aplicativo</b> e também com <b>interface de terminal</b>.</p></div>
+<div class="card product"><span class="pill">Synapse Work</span><div class="icon">💬</div><h3>Chat, estudo e produtividade</h3>
+<p>O <b>Synapse Work</b> será o hub de conversação e trabalho: tire dúvidas, estude, escreva textos, crie resumos, planeje projetos, produza apresentações e organize tarefas.</p>
+<p>Um só lugar para conversar e trabalhar com as principais inteligências artificiais.</p></div>
+</div>
+<div class="grid g3" style="margin-top:20px">
+<div class="card"><div class="icon">🌐</div><h3>Versão web</h3><p>A Sinapse AI será acessível pelo navegador, sem instalação complicada.</p></div>
+<div class="card"><div class="icon">📱</div><h3>Android e iPhone</h3><p>Aplicativos para Android e iPhone estão planejados para as próximas fases.</p></div>
+<div class="card"><div class="icon">⚡</div><h3>Experiência conectada</h3><p>Synapse Code e Synapse Work farão parte do mesmo ecossistema.</p></div>
+</div></section>
+
+<section id="ias" class="wrap"><div class="section-head"><h2>As principais IAs em um só lugar</h2><p>A proposta é reunir ferramentas de texto, código, estudo, produtividade e criação — sem precisar assinar cada serviço separadamente.</p></div>
+<div class="ai-grid">
+<div class="ai"><div class="ai-logo">AI</div><div><b>ChatGPT</b><small>Conversas, estudo e criação</small></div></div>
+<div class="ai"><div class="ai-logo">AI</div><div><b>Claude</b><small>Escrita, análise e raciocínio</small></div></div>
+<div class="ai"><div class="ai-logo">AI</div><div><b>Gemini</b><small>Pesquisa, texto e multimodal</small></div></div>
+<div class="ai"><div class="ai-logo">AI</div><div><b>Codex</b><small>Programação e agentes de código</small></div></div>
+<div class="ai"><div class="ai-logo">AI</div><div><b>Perplexity</b><small>Pesquisa com fontes</small></div></div>
+<div class="ai"><div class="ai-logo">AI</div><div><b>Grok</b><small>Conversas e informações</small></div></div>
+<div class="ai"><div class="ai-logo">AI</div><div><b>DeepSeek</b><small>Raciocínio e programação</small></div></div>
+<div class="ai"><div class="ai-logo">+</div><div><b>Mais IAs em breve</b><small>O catálogo pode crescer com o plano</small></div></div>
+</div>
+<p class="note"><b>Lista inicial e ilustrativa.</b> Envie a lista definitiva das IAs, links, descrições e logos para atualizarmos o catálogo oficial.</p></section>
+
+<section id="economia" class="wrap"><div class="section-head"><h2>Quanto você economiza?</h2><p>Assinar várias IAs separadamente pode sair muito caro. A Sinapse AI reúne o essencial em um único plano de <b>R$ 30/mês</b> durante o lançamento.</p></div>
+<div class="calc">
+<div class="card"><h3>Calculadora de economia</h3>
+<div class="field"><label>Valor mensal das IAs que você assinaria separadamente</label><input id="manualTotal" type="number" min="0" step="1" value="150"></div>
+<div class="field"><label>Quantas IAs você pretende usar na Sinapse</label><input id="aiCount" type="number" min="1" max="20" value="5"></div>
+<div class="field"><label>Plano Sinapse desejado</label><select id="plan"><option value="30">Sinapse Launch — R$ 30/mês</option><option value="40">Sinapse+ — R$ 40/mês</option><option value="50">Sinapse Max — R$ 50/mês</option></select></div>
+<button class="btn btn-primary" id="calcBtn">Calcular economia</button></div>
+<div class="card counter-card"><h3>Resultado</h3><div class="result" id="monthly">R$ 120</div><div class="result-sub">economia estimada por mês</div><div class="saving" id="yearly">R$ 1.440 economizados por ano</div><p class="result-sub" id="detail">R$ 150/mês em assinaturas separadas contra R$ 30/mês na Sinapse AI.</p></div>
+</div></section>
+
+<section id="comunidade" class="wrap"><div class="section-head"><h2>Ajude a construir a Sinapse AI</h2><p>A Sinapse AI é uma plataforma nova e ainda em desenvolvimento. Modelos de IA são caros de manter e vender acesso por R$ 30 quase não gera lucro. O apoio inicial da comunidade é essencial para transformar essa ideia em um produto real.</p></div>
+<div class="card counter-card">
+<p class="tag">Contagem real de interessados</p>
+<div class="big-count" id="supporters">0</div>
+<p style="color:var(--muted)">pessoas interessadas em assinar a Sinapse AI por R$ 30/mês</p>
+<button class="btn btn-primary" id="supportBtn" style="margin-top:20px">Eu quero assinar por R$ 30/mês</button>
+<p class="result-sub" id="supportMessage" style="margin-top:12px">Seu clique é registrado no servidor e ajuda a medir o interesse real.</p>
+<div class="goal"><div class="bar"><i id="goalBar"></i></div><div class="goal-row"><span>Meta atual: 500 apoios</span><span id="goalPct">0%</span></div></div>
+<div class="goals">
+<div class="goal-item" data-goal="100"><span>🎯</span><span><b>100 apoios:</b> liberamos o preview antecipado.</span><span class="status"></span></div>
+<div class="goal-item" data-goal="250"><span>🖼️</span><span><b>250 apoios:</b> iniciamos o desenvolvimento de geração de imagens.</span><span class="status"></span></div>
+<div class="goal-item" data-goal="500"><span>🚀</span><span><b>500 apoios:</b> lançamento do preview público da Sinapse AI.</span><span class="status"></span></div>
+<div class="goal-item" data-goal="1000"><span>📱</span><span><b>1.000 apoios:</b> prioridade total para os apps Android e iPhone.</span><span class="status"></span></div>
+</div></div>
+
+<div class="card" style="margin-top:22px"><h3>Quer pagar mais para ter mais?</h3>
+<p style="color:var(--muted);font-size:15px">O plano não custará menos de R$ 30. Mas, se muita gente estiver disposta a pagar mais, poderemos incluir mais ferramentas, créditos e recursos novos — como geração de imagens — mantendo a proposta de um hub completo.</p>
+<div class="ads-options">
+<div class="ads-option" data-price="30"><b>R$ 30</b><small>Sinapse Launch</small><div class="vote-count">0 votos</div></div>
+<div class="ads-option" data-price="40"><b>R$ 40</b><small>Sinapse+ com mais recursos</small><div class="vote-count">0 votos</div></div>
+<div class="ads-option" data-price="50"><b>R$ 50</b><small>Sinapse Max com mais IAs</small><div class="vote-count">0 votos</div></div>
+</div>
+<p class="note"><b>Esta é uma mega promoção de lançamento.</b> O preço original equivaleria à soma das assinaturas individuais das principais IAs. Por enquanto, a Sinapse AI sai por apenas <b>R$ 30/mês</b> — um valor que mal cobre os custos dos modelos. Depois do lançamento, essa condição pode não continuar disponível.</p></div>
+</section>
+</main>
+
+<footer><div class="wrap">Sinapse AI © 2026 — Hub de Inteligências Artificiais · Synapse Code · Synapse Work<br>Site em desenvolvimento. Android e iPhone em breve.</div></footer>
+
+<script>
+const brl=v=>'R$ '+Number(v||0).toLocaleString('pt-BR');
+async function loadStats(){try{const r=await fetch('/api/stats');const d=await r.json();document.getElementById('supporters').textContent=d.supporters;const pct=Math.min(100,Math.round(d.supporters/500*100));document.getElementById('goalBar').style.width=pct+'%';document.getElementById('goalPct').textContent=pct+'%';document.querySelectorAll('.goal-item').forEach(item=>{const done=d.supporters>=+item.dataset.goal;item.classList.toggle('done',done);item.querySelector('.status').textContent=done?'✔':''});Object.entries(d.planVotes||{}).forEach(([price,votes])=>{const el=document.querySelector(`.ads-option[data-price="${price}"] .vote-count`);if(el)el.textContent=votes+' votos'})}catch(e){console.error(e)}}
+document.getElementById('supportBtn').onclick=async e=>{const b=e.target;b.disabled=true;try{const r=await fetch('/api/support',{method:'POST'});const d=await r.json();document.getElementById('supportMessage').textContent='Obrigado! Seu interesse foi registrado. Total atual: '+d.supporters+' pessoas.';await loadStats()}catch(err){document.getElementById('supportMessage').textContent='Não foi possível registrar agora. Tente novamente.'}finally{b.disabled=false}};
+document.querySelectorAll('.ads-option').forEach(option=>option.onclick=async()=>{document.querySelectorAll('.ads-option').forEach(o=>o.classList.remove('selected'));option.classList.add('selected');document.getElementById('plan').value=option.dataset.price;calc();try{await fetch('/api/plan-vote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({price:option.dataset.price})});await loadStats()}catch(e){}});
+function calc(){const total=Math.max(0,Number(document.getElementById('manualTotal').value)||0);const plan=Number(document.getElementById('plan').value);const save=Math.max(0,total-plan);document.getElementById('monthly').textContent=brl(save);document.getElementById('yearly').textContent=brl(save*12)+' economizados por ano';document.getElementById('detail').textContent=brl(total)+'/mês em assinaturas separadas contra '+brl(plan)+'/mês na Sinapse AI.'}
+document.getElementById('calcBtn').onclick=calc;calc();loadStats();
+</script>
+</body>
+</html>
