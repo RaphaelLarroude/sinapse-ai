@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sinapse AI — O hub definitivo de Inteligências Artificiais</title>
-<meta name="description" content="Sinapse AI reúne as principais ferramentas de IA em um só lugar, com Synapse Code e Synapse Work, por R$ 30/mês durante o lançamento.">
+<meta name="description" content="Sinapse AI reúne modelos de IA disponíveis pela CodeCraft API em um só lugar, com Synapse Code e Synapse Work, uso ilimitado e limite de 50 RPM.">
 <style>
 :root{--bg:#05060f;--panel:rgba(10,14,30,.72);--neon:#00f0ff;--neon2:#ff2bd6;--neon3:#7c4dff;--text:#e8f4ff;--muted:#93a7c4;--border:rgba(0,240,255,.22)}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
@@ -29,7 +29,7 @@ h1 em{font-style:normal;background:linear-gradient(90deg,var(--neon),var(--neon2
 .hero p{max-width:740px;margin:0 auto;color:var(--muted);font-size:18px}
 .hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:32px 0 16px}
 .price-note{color:var(--muted);font-size:13px}
-section{padding:78px 0}.section-head{text-align:center;max-width:780px;margin:0 auto 44px}
+section{padding:78px 0}.section-head{text-align:center;max-width:820px;margin:0 auto 44px}
 h2{font-size:clamp(28px,4vw,44px);letter-spacing:-1px;margin-bottom:12px}.section-head p{color:var(--muted)}
 .card{background:var(--panel);border:1px solid var(--border);border-radius:22px;padding:28px;backdrop-filter:blur(12px);transition:.25s}
 .card:hover{transform:translateY(-4px);border-color:rgba(255,43,214,.45)}
@@ -40,10 +40,18 @@ h2{font-size:clamp(28px,4vw,44px);letter-spacing:-1px;margin-bottom:12px}.sectio
 .pill{display:inline-block;margin-bottom:14px;padding:6px 12px;border-radius:999px;background:rgba(255,43,214,.14);color:#ff9de4;font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}
 .terminal{margin-top:18px;padding:16px;border-radius:14px;background:#02040c;border:1px solid rgba(0,240,255,.25);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:#8ff6ff}
 .terminal b{color:#ff6ad5}
-.ai-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
-.ai{display:flex;gap:13px;align-items:center;padding:16px;border-radius:16px;border:1px solid var(--border);background:rgba(8,12,25,.7)}
-.ai-logo{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-weight:900;background:linear-gradient(135deg,rgba(0,240,255,.2),rgba(255,43,214,.2));border:1px solid var(--border)}
-.ai b{display:block;font-size:15px}.ai small{color:var(--muted);font-size:12px}
+.model-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.model{padding:16px;border-radius:16px;border:1px solid var(--border);background:rgba(8,12,25,.7)}
+.model b{display:block;font-size:15px}.model small{color:var(--muted);font-size:12px;display:block;margin-top:4px}
+.model .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.model .tags span{font-size:10px;padding:4px 8px;border-radius:999px;border:1px solid var(--border);color:var(--neon)}
+.table-wrap{overflow-x:auto;border-radius:18px;border:1px solid var(--border);background:rgba(4,8,18,.75)}
+table{width:100%;border-collapse:collapse;min-width:640px}
+th,td{padding:15px 16px;text-align:left;border-bottom:1px solid rgba(255,255,255,.07);font-size:14px}
+th{color:var(--neon);font-size:12px;text-transform:uppercase;letter-spacing:1px}
+td{color:var(--muted)}td b{color:var(--text)}
+tr:last-child td{border-bottom:0}
+.highlight td{background:rgba(0,240,255,.07);color:var(--text)}
 .calc{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}
 .field{margin-bottom:16px}label{display:block;font-size:13px;color:var(--muted);margin-bottom:7px;font-weight:700}
 input,select{width:100%;padding:13px 15px;border-radius:12px;border:1px solid var(--border);background:rgba(3,6,16,.85);color:var(--text);font:inherit}
@@ -71,16 +79,16 @@ footer{border-top:1px solid var(--border);padding:34px 0;color:var(--muted);font
 <body>
 <header><div class="wrap nav">
 <a class="logo" href="#"><span class="logo-mark">S</span>Sinapse<span>AI</span></a>
-<nav class="menu"><a href="#produtos">Produtos</a><a href="#ias">IAs inclusas</a><a href="#economia">Economia</a><a href="#comunidade">Comunidade</a></nav>
+<nav class="menu"><a href="#produtos">Produtos</a><a href="#modelos">Modelos</a><a href="#comparativo">Comparativo</a><a href="#economia">Economia</a><a href="#comunidade">Comunidade</a></nav>
 <a class="btn btn-primary" href="#comunidade">Quero apoiar</a>
 </div></header>
 
 <main>
 <section class="hero wrap"><span class="tag">Lançamento limitado</span>
 <h1>Todas as principais IAs.<br><em>Um só hub.</em></h1>
-<p>A <b>Sinapse AI</b> é um hub que reúne as principais inteligências artificiais em uma única plataforma — para criar, programar, estudar, produzir conteúdo e trabalhar com mais velocidade.</p>
-<div class="hero-actions"><a class="btn btn-primary" href="#comunidade">Quero a Sinapse AI</a><a class="btn btn-ghost" href="#economia">Calcular minha economia</a></div>
-<p class="price-note">Durante o lançamento: <b>R$ 30/mês</b>. Promoção temporária, sujeita ao apoio da comunidade.</p>
+<p>A <b>Sinapse AI</b> é um hub que reúne modelos de inteligência artificial disponíveis pela <b>CodeCraft API</b> em uma única plataforma — para criar, programar, estudar, produzir conteúdo e trabalhar com mais velocidade.</p>
+<div class="hero-actions"><a class="btn btn-primary" href="#comunidade">Quero a Sinapse AI</a><a class="btn btn-ghost" href="#comparativo">Ver comparativo de preços</a></div>
+<p class="price-note">Durante o lançamento: <b>R$ 30/mês</b> · uso ilimitado · limite de <b>50 requisições por minuto (RPM)</b>.</p>
 </section>
 
 <section id="produtos" class="wrap"><div class="section-head"><h2>Conheça o ecossistema Sinapse</h2><p>A Sinapse AI terá uma experiência própria, com foco em ser realmente útil no dia a dia de quem estuda, cria, programa e trabalha.</p></div>
@@ -91,32 +99,46 @@ footer{border-top:1px solid var(--border);padding:34px 0;color:var(--muted);font
 <p style="margin-top:14px">Estará disponível como <b>aplicativo</b> e também com <b>interface de terminal</b>.</p></div>
 <div class="card product"><span class="pill">Synapse Work</span><div class="icon">💬</div><h3>Chat, estudo e produtividade</h3>
 <p>O <b>Synapse Work</b> será o hub de conversação e trabalho: tire dúvidas, estude, escreva textos, crie resumos, planeje projetos, produza apresentações e organize tarefas.</p>
-<p>Um só lugar para conversar e trabalhar com as principais inteligências artificiais.</p></div>
+<p>Um só lugar para conversar e trabalhar com os modelos de IA disponíveis na plataforma.</p></div>
 </div>
 <div class="grid g3" style="margin-top:20px">
-<div class="card"><div class="icon">🌐</div><h3>Versão web</h3><p>A Sinapse AI será acessível pelo navegador, sem instalação complicada.</p></div>
-<div class="card"><div class="icon">📱</div><h3>Android e iPhone</h3><p>Aplicativos para Android e iPhone estão planejados para as próximas fases.</p></div>
-<div class="card"><div class="icon">⚡</div><h3>Experiência conectada</h3><p>Synapse Code e Synapse Work farão parte do mesmo ecossistema.</p></div>
+<div class="card"><div class="icon">♾️</div><h3>Uso ilimitado</h3><p>O uso das inteligências artificiais será ilimitado dentro da Sinapse AI.</p></div>
+<div class="card"><div class="icon">⏱️</div><h3>Limite de 50 RPM</h3><p>Por enquanto, haverá um limite técnico de 50 requisições por minuto para manter a plataforma estável.</p></div>
+<div class="card"><div class="icon">📱</div><h3>Web e mobile</h3><p>Versão web desde o início; aplicativos Android e iPhone planejados para as próximas fases.</p></div>
 </div></section>
 
-<section id="ias" class="wrap"><div class="section-head"><h2>As principais IAs em um só lugar</h2><p>A proposta é reunir ferramentas de texto, código, estudo, produtividade e criação — sem precisar assinar cada serviço separadamente.</p></div>
-<div class="ai-grid">
-<div class="ai"><div class="ai-logo">AI</div><div><b>ChatGPT</b><small>Conversas, estudo e criação</small></div></div>
-<div class="ai"><div class="ai-logo">AI</div><div><b>Claude</b><small>Escrita, análise e raciocínio</small></div></div>
-<div class="ai"><div class="ai-logo">AI</div><div><b>Gemini</b><small>Pesquisa, texto e multimodal</small></div></div>
-<div class="ai"><div class="ai-logo">AI</div><div><b>Codex</b><small>Programação e agentes de código</small></div></div>
-<div class="ai"><div class="ai-logo">AI</div><div><b>Perplexity</b><small>Pesquisa com fontes</small></div></div>
-<div class="ai"><div class="ai-logo">AI</div><div><b>Grok</b><small>Conversas e informações</small></div></div>
-<div class="ai"><div class="ai-logo">AI</div><div><b>DeepSeek</b><small>Raciocínio e programação</small></div></div>
-<div class="ai"><div class="ai-logo">+</div><div><b>Mais IAs em breve</b><small>O catálogo pode crescer com o plano</small></div></div>
+<section id="modelos" class="wrap"><div class="section-head"><h2>Modelos disponíveis no Synapse</h2><p>Os modelos do Synapse AI serão os disponíveis na <b>CodeCraft API</b>. A plataforma reúne 33 modelos em um endpoint compatível com OpenAI, incluindo opções para chat, raciocínio, código, visão, ferramentas e streaming.</p></div>
+<div class="model-grid">
+<div class="model"><b>GPT-5.6 Luna</b><small>Modelo eficiente da OpenAI, com raciocínio, visão, ferramentas e streaming.</small><div class="tags"><span>Reasoning</span><span>Vision</span><span>Tools</span></div></div>
+<div class="model"><b>DeepSeek-V4-Pro</b><small>Modelo avançado para raciocínio e programação.</small><div class="tags"><span>Reasoning</span><span>Tools</span><span>Streaming</span></div></div>
+<div class="model"><b>DeepSeek-V4-Flash</b><small>Opção rápida e econômica para tarefas do dia a dia.</small><div class="tags"><span>Reasoning</span><span>Tools</span><span>Streaming</span></div></div>
+<div class="model"><b>Claude Fable 5</b><small>Modelo avançado para escrita, análise e raciocínio.</small><div class="tags"><span>Reasoning</span><span>Tools</span><span>Streaming</span></div></div>
+<div class="model"><b>Claude Opus</b><small>Modelo robusto para tarefas complexas, código e análise.</small><div class="tags"><span>Reasoning</span><span>Tools</span><span>Streaming</span></div></div>
+<div class="model"><b>Gemma 2 2B</b><small>Modelo leve e rápido do Google para tarefas cotidianas.</small><div class="tags"><span>Streaming</span><span>JSON</span></div></div>
+<div class="model"><b>Qwen3.8-27B</b><small>Modelo compacto da Alibaba com boa capacidade geral.</small><div class="tags"><span>Reasoning</span><span>Streaming</span></div></div>
+<div class="model"><b>Seed 2.1 Turbo</b><small>Modelo rápido da ByteDance para raciocínio e código.</small><div class="tags"><span>Reasoning</span><span>Vision</span><span>Tools</span></div></div>
+<div class="model"><b>+ 25 outros modelos</b><small>O catálogo completo da CodeCraft API terá 33 modelos disponíveis no Synapse.</small><div class="tags"><span>Chat</span><span>Código</span><span>Multimodal</span></div></div>
 </div>
-<p class="note"><b>Lista inicial e ilustrativa.</b> Envie a lista definitiva das IAs, links, descrições e logos para atualizarmos o catálogo oficial.</p></section>
+<p class="note"><b>Observação:</b> o modelo <b>Claude Mythos</b> não fará parte da assinatura da Sinapse AI. A lista acima é baseada no catálogo público da CodeCraft API e pode ser atualizada conforme novos modelos forem adicionados ou removidos.</p></section>
+
+<section id="comparativo" class="wrap"><div class="section-head"><h2>Comparativo de assinaturas</h2><p>Assinar as principais plataformas de IA separadamente custa bem mais. A Sinapse AI reúne modelos de várias famílias em um único plano.</p></div>
+<div class="table-wrap"><table>
+<thead><tr><th>Plataforma</th><th>Plano individual</th><th>Preço internacional</th><th>O que normalmente inclui</th></tr></thead>
+<tbody>
+<tr><td><b>ChatGPT</b></td><td>Plus</td><td>US$ 20/mês</td><td>Acesso prioritário a modelos avançados, recursos de imagem, arquivos e ferramentas.</td></tr>
+<tr><td><b>Claude</b></td><td>Pro</td><td>US$ 20/mês</td><td>Uso ampliado de modelos Claude, projetos, arquivos e recursos avançados.</td></tr>
+<tr><td><b>Gemini</b></td><td>Google AI Pro</td><td>US$ 19,99/mês</td><td>Acesso a modelos Gemini avançados e integrações com o ecossistema Google.</td></tr>
+<tr><td><b>Perplexity</b></td><td>Pro</td><td>US$ 20/mês</td><td>Pesquisas avançadas, escolha de modelos e uso ampliado de recursos Pro.</td></tr>
+<tr><td><b>Grok</b></td><td>SuperGrok</td><td>A partir de US$ 30/mês</td><td>Acesso ampliado aos modelos Grok e recursos premium.</td></tr>
+<tr class="highlight"><td><b>Sinapse AI</b></td><td>Launch</td><td><b>R$ 30/mês</b></td><td><b>Uso ilimitado</b> dos modelos disponíveis, com limite técnico de 50 RPM.</td></tr>
+</tbody></table></div>
+<p class="note">Valores internacionais são referências públicas e podem variar conforme país, câmbio, impostos e mudanças dos planos. O comparativo serve para mostrar quanto custaria assinar cada serviço separadamente.</p></section>
 
 <section id="economia" class="wrap"><div class="section-head"><h2>Quanto você economiza?</h2><p>Assinar várias IAs separadamente pode sair muito caro. A Sinapse AI reúne o essencial em um único plano de <b>R$ 30/mês</b> durante o lançamento.</p></div>
 <div class="calc">
 <div class="card"><h3>Calculadora de economia</h3>
 <div class="field"><label>Valor mensal das IAs que você assinaria separadamente</label><input id="manualTotal" type="number" min="0" step="1" value="150"></div>
-<div class="field"><label>Quantas IAs você pretende usar na Sinapse</label><input id="aiCount" type="number" min="1" max="20" value="5"></div>
+<div class="field"><label>Quantos modelos você pretende usar na Sinapse</label><input id="aiCount" type="number" min="1" max="33" value="5"></div>
 <div class="field"><label>Plano Sinapse desejado</label><select id="plan"><option value="30">Sinapse Launch — R$ 30/mês</option><option value="40">Sinapse+ — R$ 40/mês</option><option value="50">Sinapse Max — R$ 50/mês</option></select></div>
 <button class="btn btn-primary" id="calcBtn">Calcular economia</button></div>
 <div class="card counter-card"><h3>Resultado</h3><div class="result" id="monthly">R$ 120</div><div class="result-sub">economia estimada por mês</div><div class="saving" id="yearly">R$ 1.440 economizados por ano</div><p class="result-sub" id="detail">R$ 150/mês em assinaturas separadas contra R$ 30/mês na Sinapse AI.</p></div>
@@ -144,7 +166,7 @@ footer{border-top:1px solid var(--border);padding:34px 0;color:var(--muted);font
 <div class="ads-option" data-price="40"><b>R$ 40</b><small>Sinapse+ com mais recursos</small><div class="vote-count">0 votos</div></div>
 <div class="ads-option" data-price="50"><b>R$ 50</b><small>Sinapse Max com mais IAs</small><div class="vote-count">0 votos</div></div>
 </div>
-<p class="note"><b>Esta é uma mega promoção de lançamento.</b> O preço original equivaleria à soma das assinaturas individuais das principais IAs. Por enquanto, a Sinapse AI sai por apenas <b>R$ 30/mês</b> — um valor que mal cobre os custos dos modelos. Depois do lançamento, essa condição pode não continuar disponível.</p></div>
+<p class="note"><b>Esta é uma mega promoção de lançamento.</b> O preço original equivaleria à soma das assinaturas individuais das principais IAs. Por enquanto, a Sinapse AI sai por apenas <b>R$ 30/mês</b>, com uso ilimitado e limite de 50 RPM — um valor que mal cobre os custos dos modelos. Depois do lançamento, essa condição pode não continuar disponível.</p></div>
 </section>
 </main>
 

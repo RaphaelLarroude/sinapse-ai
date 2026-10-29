@@ -1,12 +1,14 @@
 # Sinapse AI
 
-A **Sinapse AI** é um hub de inteligências artificiais que reúne as principais ferramentas de IA em um só lugar.
+A **Sinapse AI** é um hub de inteligências artificiais que reúne modelos disponíveis pela **CodeCraft API** em um só lugar.
 
 O projeto inclui:
 
 - **Synapse Code**: interface de terminal para programação, criação de sites, aplicativos, scripts e automações. Sua usabilidade é inspirada em ferramentas como Codex, Claude Code, OpenCode e Hermes, mas com identidade, recursos e funcionamento próprios da Sinapse AI.
 - **Synapse Work**: hub de chat, estudo, produtividade, escrita e organização.
-- **Versão web**, com versões para **Android** e **iPhone** planejadas para o futuro.
+- **Modelos da CodeCraft API**: catálogo com 33 modelos, sem incluir o Claude Mythos na assinatura.
+- **Uso ilimitado**, com limite técnico inicial de **50 requisições por minuto (RPM)**.
+- **Comparativo de assinaturas** entre ChatGPT, Claude, Gemini, Perplexity, Grok e Sinapse AI.
 - **Calculadora de economia** para comparar assinaturas separadas com o plano Sinapse de R$ 30/mês.
 - **Contadores reais** de interesse e votos de plano, salvos pelo backend Node.js.
 
@@ -78,6 +80,7 @@ Valores aceitos: `"30"`, `"40"` e `"50"`.
 
 ## Próximos passos
 
+- Sincronizar automaticamente a lista de modelos com `GET https://codecraftapi.com/v1/models`.
 - Substituir o armazenamento JSON por Vercel KV, Supabase ou Firebase.
 - Adicionar autenticação e prevenção de cliques repetidos.
 - Criar páginas dedicadas para Synapse Code e Synapse Work.
