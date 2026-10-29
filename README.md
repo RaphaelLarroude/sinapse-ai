@@ -10,6 +10,15 @@ O projeto inclui:
 - **Calculadora de economia** para comparar assinaturas separadas com o plano Sinapse de R$ 30/mês.
 - **Contadores reais** de interesse e votos de plano, salvos pelo backend Node.js.
 
+## Metas da comunidade
+
+| Interessados | Recompensa |
+|---:|---|
+| 9 | Liberação do preview da Sinapse AI |
+| 14 | Geração de imagens ilimitada, sem custo adicional |
+| 19 | Geração de música e áudio + ferramenta de estudos com texto em áudio, análise de documentos, resumos e materiais de revisão |
+| 25 | Execução de automações em servidores na nuvem, mesmo com o computador do usuário desligado |
+
 ## Tecnologias
 
 - Node.js

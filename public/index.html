@@ -56,7 +56,7 @@ input:focus,select:focus{outline:none;border-color:var(--neon)}
 .goal{margin-top:18px}.bar{height:10px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}.bar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--neon),var(--neon2));width:0;transition:width .6s}
 .goal-row{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:7px}
 .goals{margin-top:26px;display:grid;gap:10px;text-align:left}
-.goal-item{display:flex;gap:10px;align-items:center;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:rgba(4,8,18,.75);font-size:14px}
+.goal-item{display:flex;gap:10px;align-items:flex-start;padding:14px;border-radius:12px;border:1px solid var(--border);background:rgba(4,8,18,.75);font-size:14px}
 .goal-item.done{border-color:rgba(0,255,170,.4);color:#a8ffe2}.status{margin-left:auto;font-weight:900}
 .ads-options{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
 .ads-option{padding:18px;border-radius:16px;border:1px solid var(--border);background:rgba(4,8,18,.75);cursor:pointer;text-align:center;transition:.2s}
@@ -126,19 +126,19 @@ footer{border-top:1px solid var(--border);padding:34px 0;color:var(--muted);font
 <div class="card counter-card">
 <p class="tag">Contagem real de interessados</p>
 <div class="big-count" id="supporters">0</div>
-<p style="color:var(--muted)">pessoas interessadas em assinar a Sinapse AI por R$ 30/mês</p>
-<button class="btn btn-primary" id="supportBtn" style="margin-top:20px">Eu quero assinar por R$ 30/mês</button>
-<p class="result-sub" id="supportMessage" style="margin-top:12px">Seu clique é registrado no servidor e ajuda a medir o interesse real.</p>
-<div class="goal"><div class="bar"><i id="goalBar"></i></div><div class="goal-row"><span>Meta atual: 500 apoios</span><span id="goalPct">0%</span></div></div>
+<p style="color:var(--muted)">pessoas interessadas em ter a Sinapse AI por R$ 30/mês</p>
+<button class="btn btn-primary" id="supportBtn" style="margin-top:20px">Estou interessado na Sinapse AI</button>
+<p class="result-sub" id="supportMessage" style="margin-top:12px">Seu clique é registrado no servidor e ajuda a destravar as metas da comunidade.</p>
+<div class="goal"><div class="bar"><i id="goalBar"></i></div><div class="goal-row"><span>Próxima meta: 9 interessados</span><span id="goalPct">0%</span></div></div>
 <div class="goals">
-<div class="goal-item" data-goal="100"><span>🎯</span><span><b>100 apoios:</b> liberamos o preview antecipado.</span><span class="status"></span></div>
-<div class="goal-item" data-goal="250"><span>🖼️</span><span><b>250 apoios:</b> iniciamos o desenvolvimento de geração de imagens.</span><span class="status"></span></div>
-<div class="goal-item" data-goal="500"><span>🚀</span><span><b>500 apoios:</b> lançamento do preview público da Sinapse AI.</span><span class="status"></span></div>
-<div class="goal-item" data-goal="1000"><span>📱</span><span><b>1.000 apoios:</b> prioridade total para os apps Android e iPhone.</span><span class="status"></span></div>
+<div class="goal-item" data-goal="9"><span>🚀</span><span><b>9 pessoas interessadas:</b> liberamos o preview da Sinapse AI para a comunidade.</span><span class="status"></span></div>
+<div class="goal-item" data-goal="14"><span>🖼️</span><span><b>14 pessoas interessadas:</b> adicionamos <b>geração de imagens ilimitada</b> para todos, sem custo adicional no plano de R$ 30.</span><span class="status"></span></div>
+<div class="goal-item" data-goal="19"><span>🎧</span><span><b>19 pessoas interessadas:</b> adicionamos geração de música e áudio, além de uma ferramenta de estudos capaz de transformar textos em áudio, analisar documentos, criar resumos, mapas mentais, perguntas e materiais de revisão.</span><span class="status"></span></div>
+<div class="goal-item" data-goal="25"><span>☁️</span><span><b>25 pessoas interessadas:</b> liberamos execução em servidores na nuvem, sem custo adicional. Você poderá criar automações e tarefas que rodam mesmo com o seu computador desligado.</span><span class="status"></span></div>
 </div></div>
 
 <div class="card" style="margin-top:22px"><h3>Quer pagar mais para ter mais?</h3>
-<p style="color:var(--muted);font-size:15px">O plano não custará menos de R$ 30. Mas, se muita gente estiver disposta a pagar mais, poderemos incluir mais ferramentas, créditos e recursos novos — como geração de imagens — mantendo a proposta de um hub completo.</p>
+<p style="color:var(--muted);font-size:15px">O plano não custará menos de R$ 30. Mas, se muita gente estiver disposta a pagar mais, poderemos incluir mais ferramentas, créditos e recursos novos — mantendo a proposta de um hub completo.</p>
 <div class="ads-options">
 <div class="ads-option" data-price="30"><b>R$ 30</b><small>Sinapse Launch</small><div class="vote-count">0 votos</div></div>
 <div class="ads-option" data-price="40"><b>R$ 40</b><small>Sinapse+ com mais recursos</small><div class="vote-count">0 votos</div></div>
@@ -152,7 +152,8 @@ footer{border-top:1px solid var(--border);padding:34px 0;color:var(--muted);font
 
 <script>
 const brl=v=>'R$ '+Number(v||0).toLocaleString('pt-BR');
-async function loadStats(){try{const r=await fetch('/api/stats');const d=await r.json();document.getElementById('supporters').textContent=d.supporters;const pct=Math.min(100,Math.round(d.supporters/500*100));document.getElementById('goalBar').style.width=pct+'%';document.getElementById('goalPct').textContent=pct+'%';document.querySelectorAll('.goal-item').forEach(item=>{const done=d.supporters>=+item.dataset.goal;item.classList.toggle('done',done);item.querySelector('.status').textContent=done?'✔':''});Object.entries(d.planVotes||{}).forEach(([price,votes])=>{const el=document.querySelector(`.ads-option[data-price="${price}"] .vote-count`);if(el)el.textContent=votes+' votos'})}catch(e){console.error(e)}}
+const NEXT_GOAL=9;
+async function loadStats(){try{const r=await fetch('/api/stats');const d=await r.json();document.getElementById('supporters').textContent=d.supporters;const pct=Math.min(100,Math.round(d.supporters/NEXT_GOAL*100));document.getElementById('goalBar').style.width=pct+'%';document.getElementById('goalPct').textContent=pct+'%';document.querySelectorAll('.goal-item').forEach(item=>{const done=d.supporters>=+item.dataset.goal;item.classList.toggle('done',done);item.querySelector('.status').textContent=done?'✔':''});Object.entries(d.planVotes||{}).forEach(([price,votes])=>{const el=document.querySelector(`.ads-option[data-price="${price}"] .vote-count`);if(el)el.textContent=votes+' votos'})}catch(e){console.error(e)}}
 document.getElementById('supportBtn').onclick=async e=>{const b=e.target;b.disabled=true;try{const r=await fetch('/api/support',{method:'POST'});const d=await r.json();document.getElementById('supportMessage').textContent='Obrigado! Seu interesse foi registrado. Total atual: '+d.supporters+' pessoas.';await loadStats()}catch(err){document.getElementById('supportMessage').textContent='Não foi possível registrar agora. Tente novamente.'}finally{b.disabled=false}};
 document.querySelectorAll('.ads-option').forEach(option=>option.onclick=async()=>{document.querySelectorAll('.ads-option').forEach(o=>o.classList.remove('selected'));option.classList.add('selected');document.getElementById('plan').value=option.dataset.price;calc();try{await fetch('/api/plan-vote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({price:option.dataset.price})});await loadStats()}catch(e){}});
 function calc(){const total=Math.max(0,Number(document.getElementById('manualTotal').value)||0);const plan=Number(document.getElementById('plan').value);const save=Math.max(0,total-plan);document.getElementById('monthly').textContent=brl(save);document.getElementById('yearly').textContent=brl(save*12)+' economizados por ano';document.getElementById('detail').textContent=brl(total)+'/mês em assinaturas separadas contra '+brl(plan)+'/mês na Sinapse AI.'}
